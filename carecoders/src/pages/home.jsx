@@ -3,6 +3,7 @@ import Banner from "../images/banner.jpg";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
+import Card from "../components/Card";
 
 const Container = styled.div`
   position: relative;
@@ -34,6 +35,7 @@ const Content = styled.div`
 const Title = styled.h3`
   color: white;
   font-weight: bold;
+  font-size: 36px;
 `;
 
 const ButtonContainer = styled.div`
@@ -45,6 +47,26 @@ const ButtonContainer = styled.div`
 
 const EmptyDiv = styled.div`
   height: 40vh;
+`;
+const ServicesContainer = styled.div`
+  background-color: #e5edf2;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  h3 {
+    padding-top: 25px;
+    color: #547fb9;
+    font-weight: 700;
+    font-size: 36px;
+  }
+`;
+
+const CardsWrapper = styled.div`
+  display: flex;
 `;
 
 function Home() {
@@ -79,6 +101,26 @@ function Home() {
           </ButtonContainer>
         </Content>
       </ContentContainer>
+      <ServicesContainer>
+        <h3>Principais Serviços</h3>
+        <CardsWrapper>
+          <Card
+            imageUrl="url-da-imagem"
+            description="Consulta oftalmológica"
+            price="100,00"
+          />
+          <Card
+            imageUrl="url-da-imagem"
+            description="Exame de sangue"
+            price="50,00"
+          />
+          <Card
+            imageUrl="url-da-imagem"
+            description="Consulta geriátrica"
+            price="80,00"
+          />
+        </CardsWrapper>
+      </ServicesContainer>
     </Container>
   );
 }

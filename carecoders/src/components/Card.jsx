@@ -1,0 +1,43 @@
+import styled from "styled-components";
+
+const CardContainer = styled.div`
+  width: 320px;
+  max-height: 420px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 8px;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+`;
+
+const Content = styled.div`
+  padding: 20px;
+`;
+
+const Description = styled.p`
+  margin-bottom: 10px;
+`;
+
+const Price = styled.span`
+  font-weight: bold;
+`;
+
+const Card = ({ imageUrl, description, price }) => {
+  return (
+    <CardContainer>
+      <Image src={imageUrl} alt="Card" />
+      <Content>
+        <Description>{description}</Description>
+        <Price>R$ {price}</Price>
+      </Content>
+    </CardContainer>
+  );
+};
+
+export default Card;
