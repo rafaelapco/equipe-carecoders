@@ -8,6 +8,9 @@ const CardContainer = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const Image = styled.img`
@@ -18,6 +21,7 @@ const Image = styled.img`
 
 const Content = styled.div`
   padding: 20px;
+  text-align: left;
 `;
 
 const Description = styled.p`

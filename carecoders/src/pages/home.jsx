@@ -6,6 +6,10 @@ import Button from "../components/Button";
 import Card from "../components/Card";
 import AccessibillityHeader from "../components/AccessibilityHeader";
 import Footer from "../components/Footer";
+import Oftalmologia from "../images/oftalmologia.jpg";
+import Geriatria from "../images/geriatria.jpg";
+import Examesangue from "../images/examesangue.jpg";
+import Logo2 from "../images/Logo2.png";
 
 const Container = styled.div`
   position: relative;
@@ -20,8 +24,6 @@ const BannerImage = styled.img`
 `;
 
 const ContentContainer = styled.div`
-  position: relative;
-  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,26 +51,54 @@ const ButtonContainer = styled.div`
 
 const EmptyDiv = styled.div`
   height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 80%;
 `;
+
+const InfoBox = styled.div`
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #547fb9;
+  font-weight: 800;
+  font-size: 16px;
+  text-align: center;
+  max-width: 320px;
+`;
+
 const ServicesContainer = styled.div`
   background-color: #e5edf2;
-  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
-
   h3 {
-    padding-top: 25px;
     color: #547fb9;
     font-weight: 700;
     font-size: 36px;
+  }
+  span {
+    cursor: pointer;
+    color: #547fb9;
+    margin-bottom: 10px;
   }
 `;
 
 const CardsWrapper = styled.div`
   display: flex;
+  margin-bottom: 20px;
+`;
+
+const SubTitle = styled.div`
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 5px;
+    height: 50px;
+  }
 `;
 
 function Home() {
@@ -84,7 +114,12 @@ function Home() {
       <AccessibillityHeader />
       <Header />
       <BannerImage src={Banner} alt="Banner" />
-      <EmptyDiv />
+      <EmptyDiv>
+        <InfoBox>
+          Hospital CareCoders, cuidamos de você com a precisão de um código bem
+          escrito. Sua saúde é nossa missão!
+        </InfoBox>
+      </EmptyDiv>
       <ContentContainer>
         <Content>
           <Title>Cadastre-se</Title>
@@ -105,20 +140,24 @@ function Home() {
         </Content>
       </ContentContainer>
       <ServicesContainer>
-        <h3>Principais Serviços</h3>
+        <SubTitle>
+          <img src={Logo2} alt="logo-carecoders-semtexto" />
+          <h3>Principais Serviços</h3>
+        </SubTitle>
         <CardsWrapper>
           <Card
-            imageUrl="url-da-imagem"
+            imageUrl={Oftalmologia}
             description="Consulta oftalmológica"
             price="100,00"
           />
           <Card
-            imageUrl="url-da-imagem"
+            imageUrl={Examesangue}
             description="Exame de sangue"
             price="50,00"
           />
-          <Card imageUrl="url-da-imagem" description="Consulta geriátrica" />
+          <Card imageUrl={Geriatria} description="Consulta geriátrica" />
         </CardsWrapper>
+        <span>Ver mais</span>
       </ServicesContainer>
       <Footer />
     </Container>
