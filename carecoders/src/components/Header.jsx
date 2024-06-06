@@ -43,8 +43,6 @@ function Header() {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
-    debugger;
-    console.log("teste");
     navigate("/login");
   };
   return (
