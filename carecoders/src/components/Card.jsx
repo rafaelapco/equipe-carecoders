@@ -24,17 +24,12 @@ const Description = styled.p`
   margin-bottom: 10px;
 `;
 
-const Price = styled.span`
-  font-weight: bold;
-`;
-
-const Card = ({ imageUrl, description, price }) => {
+const Card = ({ imageUrl, description }) => {
   return (
     <CardContainer>
       <Image src={imageUrl} alt="Card" />
       <Content>
         <Description>{description}</Description>
-        <Price>R$ {price}</Price>
       </Content>
     </CardContainer>
   );

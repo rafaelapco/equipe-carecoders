@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Card from "../components/Card";
+import AccessibillityHeader from "../components/AccessibilityHeader";
+import Footer from "../components/Footer";
 
 const Container = styled.div`
   position: relative;
@@ -79,6 +81,7 @@ function Home() {
 
   return (
     <Container>
+      <AccessibillityHeader />
       <Header />
       <BannerImage src={Banner} alt="Banner" />
       <EmptyDiv />
@@ -114,13 +117,10 @@ function Home() {
             description="Exame de sangue"
             price="50,00"
           />
-          <Card
-            imageUrl="url-da-imagem"
-            description="Consulta geriátrica"
-            price="80,00"
-          />
+          <Card imageUrl="url-da-imagem" description="Consulta geriátrica" />
         </CardsWrapper>
       </ServicesContainer>
+      <Footer />
     </Container>
   );
 }
