@@ -49,6 +49,8 @@ function Header() {
     <HeaderContainer>
       <Logo src={logo} alt="Logo" />
       <NavItem href="/">Inicio</NavItem>
+      <NavItem>Sobre</NavItem>
+      <NavItem>Portal do paciente</NavItem>
       <NavItem href="/servicos">Serviços</NavItem>
       <NavItem href="/contato">Contato</NavItem>
       <Button label="Login" color="#1E1E1E" onClick={handleLoginClick} />

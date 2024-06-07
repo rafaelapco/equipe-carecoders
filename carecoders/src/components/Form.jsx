@@ -6,17 +6,23 @@ const Container = styled.div`
  display: flex;
  flex-direction: column;
  align-items: center;
+ h3{
+  font-size:1.5rem;
+ }
 `
 
 const FormContainer = styled.div`
  display: flex;
  flex-direction: column;
- width: 80%;
+ width: 70%;
  select,
   input {
     margin-bottom: 8px;
     padding: 8px;
     border-radius: 5px;
+  }
+  label{
+    font-size:1.3rem;
   }
 `
 
@@ -29,25 +35,30 @@ function Form({ type }) {
           <FormContainer>
             <label htmlFor="login"><b>{type}:</b></label>
             {type === 'Cadastro' && (
-              <>            
-                <input type="text" name="nome" placeholder="Nome" />
-                <select name="genero">
+              <> 
+              <label htmlFor="name">Nome completo </label>           
+                <input type="text" name="nome" placeholder="Digite o seu Nome"/>
+                <select name="genero de nacimento">
               <option value="masculino">Masculino</option>
               <option value="feminino">Feminino</option>
-              <option value="naoBinario">Não Binário</option>
-              <option value="naoInformado">Prefiro não informar</option>
-
             </select>
+            <label htmlFor="endereco">Endereço</label>
+            <input type="text" name="endereco" placeholder="Digite seu enderço"/>
+            <label htmlFor="telefone"></label>
+            <input type="number" name="telefone" placeholder="Digite seu telefone"/>
+            <label htmlFor="email">Email</label>
+            <input type="email"  name="email" placeholder="Digite seu email"/>
               </>
             )}
-            <select name="documento">
-              <option value="cpf">CPF</option>
-              <option value="rg">RG</option>
-            </select>
-            <input type="text" name="documento" placeholder="Documento" />
-            <input type="password" name="senha" placeholder="Senha" />
+          <label htmlFor="cpf">CPF:</label>
+            <input type="number" name="cpf" placeholder="Digite seu cpf"/>
+            <label htmlFor="senha">Senha:</label>
+            <input type="password" name="senha" placeholder="Digite sua senha"/>
             {type === 'Cadastro' && (
               <>
+              <label htmlFor="senha">Senha</label>
+              <input type="paasword" name="senha" placeholser="Digite uma senha"/>
+                <label htmlFor="corfimarsenha">Confirmar senha</label>
                 <input type="password" name="confirmarSenha" placeholder="Confirmar Senha" />
                 
               </>
@@ -55,8 +66,7 @@ function Form({ type }) {
             )}
              <Button 
           label={type === 'Cadastro' ? "Cadastrar" : "Acessar"} 
-          color="#28a745" 
-          hoverColor="#218838" 
+          color="black" 
         />
           </FormContainer>
         </Container>
