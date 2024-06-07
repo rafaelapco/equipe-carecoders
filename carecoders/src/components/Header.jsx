@@ -39,6 +39,31 @@ const NavItem = styled.a`
   }
 `;
 
+const Select = styled.select`
+  color: #09090a;
+  text-decoration: none;
+  margin: 0 1rem;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  font-size: 16px;
+  background: none;
+
+  &:hover {
+    color: #547fb9;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -5px;
+      height: 3px;
+      background-color: white;
+      background-color: #547fb9;
+    }
+  }
+`;
+
 function Header() {
   const navigate = useNavigate();
 
@@ -50,7 +75,13 @@ function Header() {
       <Logo src={logo} alt="Logo" />
       <NavItem href="/">Inicio</NavItem>
       <NavItem>Sobre</NavItem>
-      <NavItem>Portal do paciente</NavItem>
+      <NavItem>
+        <Select name="" id="">
+          <option value="">Portal do paciente</option>
+          <option value="">Consultas</option>
+          <option value="">Histórico médico</option>
+        </Select>
+      </NavItem>
       <NavItem href="/servicos">Serviços</NavItem>
       <NavItem href="/contato">Contato</NavItem>
       <Button label="Login" color="#1E1E1E" onClick={handleLoginClick} />
