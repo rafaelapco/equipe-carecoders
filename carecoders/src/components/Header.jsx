@@ -3,6 +3,12 @@ import logo from "../images/logo.png";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 
+const HeaderWrapper = styled.div`
+  width: 100%;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2); /* Sombra fina como linha */
+  z-index: 1000; /* Garante que o contêiner da sombra esteja acima de outros elementos */
+`;
+
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -71,21 +77,23 @@ function Header() {
     navigate("/login");
   };
   return (
-    <HeaderContainer>
-      <Logo src={logo} alt="Logo" />
-      <NavItem href="/">Inicio</NavItem>
-      <NavItem>Sobre</NavItem>
-      <NavItem>
-        <Select name="" id="">
-          <option value="">Portal do paciente</option>
-          <option value="">Consultas</option>
-          <option value="">Histórico médico</option>
-        </Select>
-      </NavItem>
-      <NavItem href="/servicos">Serviços</NavItem>
-      <NavItem href="/contato">Contato</NavItem>
-      <Button label="Login" color="#1E1E1E" onClick={handleLoginClick} />
-    </HeaderContainer>
+    <HeaderWrapper>
+      <HeaderContainer>
+        <Logo src={logo} alt="Logo" />
+        <NavItem href="/">Inicio</NavItem>
+        <NavItem href="/sobre">Sobre</NavItem>
+        <NavItem>
+          <Select name="" id="">
+            <option value="">Portal do paciente</option>
+            <option value="">Consultas</option>
+            <option value="">Histórico médico</option>
+          </Select>
+        </NavItem>
+        <NavItem href="/serviços">Serviços</NavItem>
+        <NavItem href="/contato">Contato</NavItem>
+        <Button label="Login" color="#1E1E1E" onClick={handleLoginClick} />
+      </HeaderContainer>
+    </HeaderWrapper>
   );
 }
 

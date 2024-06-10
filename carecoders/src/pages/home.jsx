@@ -128,7 +128,7 @@ function Home() {
             <Button
               label="Cadastrar"
               color="#1E1E1E"
-              onClick={() => handleSendClick("cadastrar")}
+              onClick={() => handleSendClick("cadastro")}
             />
             <Button
               label="Já possui conta? Faça o login"

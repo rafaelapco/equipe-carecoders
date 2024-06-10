@@ -28,12 +28,13 @@ const Description = styled.p`
   margin-bottom: 10px;
 `;
 
-const Card = ({ imageUrl, description }) => {
+const Card = ({ imageUrl, description, children }) => {
   return (
     <CardContainer>
-      <Image src={imageUrl} alt="Card" />
+      {imageUrl && <Image src={imageUrl} alt="Card" />}
       <Content>
-        <Description>{description}</Description>
+        {description && <Description>{description}</Description>}
+        {children}
       </Content>
     </CardContainer>
   );
